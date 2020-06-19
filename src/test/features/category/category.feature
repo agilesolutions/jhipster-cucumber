@@ -1,6 +1,13 @@
 Feature: Category management
 
-    Scenario: Retrieve transmit category
-        When I search category 2
+   Scenario Outline: Retrieve transmit category
+        When I search category <id>
         Then the category is found
-        And its description is 'transmit'
+        And its description is '<description>'
+        
+   Examples:
+   
+    | id             | description |
+    | 1              | Table       |
+    | 3              | Chief       |
+    | 2 		     | transmit    |        
